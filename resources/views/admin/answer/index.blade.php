@@ -4,6 +4,8 @@
 Answers
 @endsection
 
+{{-- HALO HALO HALO --}}
+
 @section('content')
 
 <div class="container">
