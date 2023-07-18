@@ -29,7 +29,7 @@
                             </div>
                             <div class="row mt-2 mb-2">
                                 <div class="col-12">
-                                    <span class="text-secondary" style="font-size: 13px">{{ $user->followers()->count() ?? 0 }} Followers<i class="bi bi-dot"></i>{{ $user->followings()->count() ?? 0 }} Followings</span><br>
+                                    {{-- <span class="text-secondary" style="font-size: 13px">{{ $user->followers()->count() ?? 0 }} Followers<i class="bi bi-dot"></i>{{ $user->followings()->count() ?? 0 }} Followings</span><br> --}}
                                 </div>
                             </div>
                             <div class="row">

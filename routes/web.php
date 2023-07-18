@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\CheckTopicController;
 use App\Http\Controllers\Admin\CheckAnswerController;
 use App\Http\Controllers\Admin\CheckCommentController;
 use App\Http\Controllers\Admin\CheckQuestionController;
-
+use Illuminate\Support\Facades\Auth;
 
 //api login provider
 Route::get('/auth/redirect/{provider}',[SocialiteController::class,'redirect']);

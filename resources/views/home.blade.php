@@ -42,25 +42,25 @@
                             $credential = \App\Http\Controllers\User\ProfileController::set_credential($answer->user);
                         }
 
-                        //set vote status
-                        if(auth()->user()->hasUpVoted($answer)){
-                            $upvoted = "-fill";
-                        }else{
-                            $upvoted = "";
-                        }
+                        // //set vote status
+                        // if(auth()->user()->hasUpVoted($answer)){
+                        //     $upvoted = "-fill";
+                        // }else{
+                        //     $upvoted = "";
+                        // }
 
-                        if(auth()->user()->hasDownVoted($answer)){
-                            $downvoted = "-fill";
-                        }else{
-                            $downvoted = "";
-                        }
+                        // if(auth()->user()->hasDownVoted($answer)){
+                        //     $downvoted = "-fill";
+                        // }else{
+                        //     $downvoted = "";
+                        // }
 
-                        //set follow status
-                        if(auth()->user()->isFollowing($answer->user)){
-                            $status = "Following";
-                        }else{
-                            $status = "Follow";
-                        }
+                        // //set follow status
+                        // if(auth()->user()->isFollowing($answer->user)){
+                        //     $status = "Following";
+                        // }else{
+                        //     $status = "Follow";
+                        // }
 
                     @endphp
                         <div class="card mt-3" id="{{ $answer->user->name_slug }}">
@@ -74,7 +74,7 @@
                                         
                                             <div class="col-11 ">
                                                 <a href="{{ route('profile.show',$answer->user->name_slug) }}" class="text-dark"><b>{{  $answer->user->name }} </b></a> &#183; 
-                                                <a href="{{ route('follow',$answer->user->name_slug) }}">{{ $status }}</a>
+                                                {{-- <a href="{{ route('follow',$answer->user->name_slug) }}">{{ $status }}</a> --}}
                                                 <div class="text-secondary">
                                                     {{ $credential }} &#183; {{ $answer->created_at->format('M d Y') }}
                                                 </div>
@@ -100,8 +100,8 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="btn-group" role="group">
-                                                    <a href="{{ route('answer.vote',['question' => $answer->question->title_slug,'answer' => $answer->id, 'vote' => 'upvote'])}}" class="text-success mr-2" ><i class="bi bi-arrow-up-circle{{ $upvoted }}"></i> {{ $answer->upVoters()->count() }}</a>
-                                                    <a href="{{ route('answer.vote',['question' => $answer->question->title_slug,'answer' => $answer->id, 'vote' => 'downvote'])}}" class="text-danger mr-4" ><i class="bi bi-arrow-down-circle{{ $downvoted }}"></i> {{ $answer->downVoters()->count() }}</a>
+                                                    {{-- <a href="{{ route('answer.vote',['question' => $answer->question->title_slug,'answer' => $answer->id, 'vote' => 'upvote'])}}" class="text-success mr-2" ><i class="bi bi-arrow-up-circle{{ $upvoted }}"></i> {{ $answer->upVoters()->count() }}</a>
+                                                    <a href="{{ route('answer.vote',['question' => $answer->question->title_slug,'answer' => $answer->id, 'vote' => 'downvote'])}}" class="text-danger mr-4" ><i class="bi bi-arrow-down-circle{{ $downvoted }}"></i> {{ $answer->downVoters()->count() }}</a> --}}
                                                     <a href="{{ $answer->question->title_slug ."#". $answer->user->name_slug }}" class="text-secondary"><i class="bi bi-chat"></i> {{ $answer->comments->count() }}</a>
                                                 </div>
                                             </div>
@@ -111,7 +111,7 @@
                                                 <i class="bi bi-share"></i></a>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                         <a class="dropdown-item" href="{{ $facebook . '#'.$answer->user->name_slug}} '. '" target="_blank"><i class="bi bi-facebook mr-2"></i>Facebook</a>
-                                                        <a class="dropdown-item" href="{{ $twitter . '#'.$answer->user->name_slug}}'.'" target="_blank"><i class="bi bi-twitter mr-2"></i>Twitter</a>
+                                                        {{-- <a class="dropdown-item" href="{{ $twitter . '#'.$answer->user->name_slug}}'.'" target="_blank"><i class="bi bi-twitter mr-2"></i>Twitter</a> --}}
                                                         <a class="dropdown-item" href="javascript: void(0)" onclick="copy()" id="copyLink" data-attr="{{ $answer->question->title_slug ."#". $answer->user->name_slug }}">Copy link</a>
                                                     </div>
                                                 </div>

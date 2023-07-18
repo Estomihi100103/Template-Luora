@@ -16,8 +16,8 @@ class CreateEmploymentsTable extends Migration
         Schema::create('employments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->string('position',60);
-            $table->string('company',12);
+            $table->string('position',100);
+            $table->string('company',100);
             $table->string('start_year',4);
             $table->string('end_year',4)->nullable();
             $table->boolean('currently')->nullable();

@@ -29,12 +29,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <span class="text-secondary" style="font-size: 13px">{{ $user->followers()->count() ?? 0 }} Followers<i class="bi bi-dot"></i>{{ $user->followings()->count() ?? 0 }} Followings</span><br>
+                                    {{-- <span class="text-secondary" style="font-size: 13px">{{ $user->followers()->count() ?? 0 }} Followers<i class="bi bi-dot"></i>{{ $user->followings()->count() ?? 0 }} Followings</span><br> --}}
                                 </div>
                             </div>
                             <div class="row mb-2 mt-2">
                                 <div class="col-12">
-                                    <div class="btn-group mr-2" role="group">
+                                    {{-- <div class="btn-group mr-2" role="group">
                                         <a href="{{ route('follow',$user->name_slug) }}" class="btn btn-primary btn-sm rounded-pill"> 
                                             @if (auth()->user()->isFollowing($user))
                                                 <i class="bi bi-person-check-fill mr-1"></i> 
@@ -44,7 +44,7 @@
                                                 {{ 'Follow ' . $user->followers()->count() ?? 0 }}
                                             @endif
                                         </a>
-                                    </div>
+                                    </div> --}}
                                     <div class="btn-group mr-2" role="group">
                                         <a href="javascript:void(0)" class="btn btn-secondary btn-sm rounded-pill"><i class="bi bi-bell mr-1"></i> Notify me</a>
                                     </div>
